@@ -10,8 +10,8 @@ Focuses in:
 
 | project name                                                              | categories                                    | status   | duration                           |
 | ------------------------------------------------------------------------- | --------------------------------------------- | -------- | ---------------------------------- |
-| [Live Packet Profiler](./_pages/cafe%20chatter%20-%20a%20live%20packet%20profiler.md) | Offensive Security, Web / Networks, Wireshark | Complete | 1 month<br>(*Apr 2025 - May 2025*) |
-| [Exploit Writeups](./_pages/exploit%20writeups/exploit%20writeups.md)              | Red Teaming, Vulnerability Analysis, Docs     | Ongoing  | does not end...                    |
+| [Live Packet Profiler](cafe%20chatter%20-%20a%20live%20packet%20profiler.md) | Offensive Security, Web / Networks, Wireshark | Complete | 1 month<br>(*Apr 2025 - May 2025*) |
+| [Exploit Writeups](exploit%20writeups/exploit%20writeups.md)              | Red Teaming, Vulnerability Analysis, Docs     | Ongoing  | does not end...                    |
 | [Basic C Proxy]()                                                         | Systems Programming, Networks, Sockets        | Complete | 2 weeks<br>(*Nov 2024*)            |
 | [25th Hour Project]()                                                     | Automation, Custom data encoding, regex/NLP   | Ongoing  | it's complicated                   |
 | [Small Neighbourhoods]()                                                  | Python, UI/UX, Mini Full Stack                | Complete | 1 month<br>*(Nov 2023)*            |
