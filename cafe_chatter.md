@@ -4,9 +4,13 @@ tags:
 date: 2025-06-08
 ---
 ```summary
-a live packet capturing system using wireshark and a custom python script to consolidate ip and mac addresses with their unencrypted traffic. captured data is then analyzed using gemini to generate behavioural profiles, answering the question: "who is this?".
+a live packet capturing system using wireshark and a custom python script to 
+consolidate ip and mac addresses with their unencrypted traffic. captured data 
+is then analyzed using gemini to generate behavioural profiles, answering the 
+question: "who is this?".
 
-created as an investigation into real-world netowrk acitivity in public environments, exploring how much can be inferred from passive observation.
+created as an investigation into real-world netowrk acitivity in public 
+environments, exploring how much can be inferred from passive observation.
 ```
 
 **Tools used:** 
@@ -18,7 +22,8 @@ created as an investigation into real-world netowrk acitivity in public environm
 ---
 # technical details
 
->[!star] ethical note
+>**ethical note**
+>
 >The exact details of my process (commands and more volatile instructions) are not published publicly to avoid misuse. I am happy to discuss details privately or in interview contexts. 
 
 ---
@@ -40,7 +45,7 @@ When you access a website and the IP address is not in your machine's cache, it 
 
 I used the aircrack-ng suite to locate active channels and collect information about the exact configuration of the WIFI and then started capture with `tshark`. Due to the high volume of traffic, I had a separate capture for handshakes, as not to miss them, and then stitched them onto the main pcaps after capture for decryption.
 
-![[Pasted image 20250608232816.png|center]]
+![](./imgs/wireshark_sample.png)
 *Sample Wireshark decrypted capture with non-encrypted filters*
 
 Working on-site, there were some complications with capture. Below are some issues that I ran into and my solutions.
@@ -52,7 +57,7 @@ Working on-site, there were some complications with capture. Below are some issu
 | Missed handshakes                        | Forced handshakes to happen again and captured before peak hours           |
 | Poor frequency capture                   | Used aircrack-ng suite to lock to target channel                           |
 
-![[Pasted image 20250608225935.jpg|center]]
+![](./imgs/wlan0_dataflow.jpg)
 *Diagram of general data flow (wlan0 was the previous project name)*
 
 ---
@@ -99,15 +104,16 @@ I can see this process being used to quickly condense data, and could pair well 
 
 ---
 # links
-- Python Source Code
-- Python Sample Output
+- [Python Source Code](https://gist.github.com/hashedscribe/c88cca66f3e680a8c53cb45c58f6dcd8)
+- [Python Sample Output](https://gist.github.com/hashedscribe/c936cf79bcb6f93593cf2d83ff62f820)
 - Gemini Sample Output
 
->[!star]- thoughts regarding the use of AI
-There were two ways I used AI in this project. One was in profiling the users with Gemini. This I think is a practical use for AI as it automates a lot of time-consuming parsing, as long as its used in moderation.
+> **thoughts regarding the use of AI**
+> 
+> There were two ways I used AI in this project. One was in profiling the users with Gemini. This I think is a practical use for AI as it automates a lot of time-consuming parsing, as long as its used in moderation.
 >
-The other way, using DeepSeek to aid my learning while I built this entire system,
+> The other way, using DeepSeek to aid my learning while I built this entire system,
 >
-I was able to learn more about how networks worked by just applying myself and learning. There are small details that I picked up while putting everything together, and I think that was extremely productive.
+> I was able to learn more about how networks worked by just applying myself and learning. There are small details that I picked up while putting everything together, and I think that was extremely productive.
 >
-However, it's scary how easily I was able to put this together. It is able to allow malicious actors to act faster and above their skill level. It brings into question how we can prevent the "hacking" of AI to build something malicious while still allowing it to be useful to the right people. I don't know if that will ever be possible and will always be something concerning.
+> However, it's scary how easily I was able to put this together. It is able to allow malicious actors to act faster and above their skill level. It brings into question how we can prevent the "hacking" of AI to build something malicious while still allowing it to be useful to the right people. I don't know if that will ever be possible and will always be something concerning.
